@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-    <style>/* Stylesheet 2: */
+    <style>/* Stylesheet 1: */
     body {
-        font-family: Arial;
-        background-color: #d14836;
-        line-height: 20px;
+        font: 100% Lucida Sans, Verdana;
+        margin: 20px;
+        line-height: 26px;
     }
     
     .container {
@@ -20,85 +20,101 @@
         overflow: auto;
     }
     
-    #top {
-        color: #ffffff;
-        padding: 15px;
-        font-size: 30px;
-        line-height: 26px;    
+    #top, #sidebar, #bottom, .menuitem {
+        border-radius: 4px;
+        margin: 4px;
     }
     
-    #top h1 {
-        margin:0;
-        line-height: 50px;
+    #top {
+        background-color: #04AA6D;
+        color: #ffffff;
+        padding: 15px;
     }
     
     #menubar {
-        width: 190px;
-        float: right;
+        width: 200px;
+        float: left
     }
     
     #main {
         padding: 10px;
-        background-color: #ffffff;
-        font: 80% Verdana;
-    }
-    
-    #main h1, #main h2 {
-        color: #d14836;
+        margin: 0 210px;
     }
     
     #sidebar {
-        background-color: #F6DAD7;
-        color: #d14836;
+        background-color: #32a4e7;
+        color: #ffffff;
         padding: 10px;
+        width: 180px;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        position: absolute;
     }
     
     #bottom {
+        border: 1px solid #d4d4d4;
+        background-color: #f1f1f1;
         text-align: center;
         padding: 10px;
         font-size: 70%;
-        color: #ffffff;
+        line-height: 14px;
     }
     
-    #menulist {
-        padding:0;
-        font: 16px verdana;
+    #top h1, #top p, #menulist {
+        margin: 0;
+        padding: 0;
     }
     
     .menuitem {
-        width: 155px;
-        background-color: #d14836;
-        border: 1px solid #d14836;
-        border-radius: 40px;
-        color: #ffffff;
+        background-color: #f1f1f1;
+        border: 1px solid #d4d4d4;
         list-style-type: none;
-        margin: 10px;
-        padding: 5px;
-        text-align: center;
+        padding: 2px;
         cursor: pointer;
-    }
-    
-    .menuitem:nth-child(2) {
-       background-color:white;
-       color: #d14836;
-       font-weight:bold;
     }
     
     .menuitem:hover {
         background-color: #ffffff;
-        color: #d14836;
+    }
+    
+    .menuitem:first-child {
+       background-color:#04AA6D;
+       color: white;
+       font-weight:bold;
     }
     
     a {
-        color: #d14836;
-        text-decoration: none;
+        color: #000000;
+        text-decoration: underline;
     }
     
     a:hover {
-        text-decoration: underline;
+        text-decoration: none;
+    }
+    
+    
+    @media (max-width: 800px) {
+        #sidebar {
+            width: auto;
+            position: relative;
+        } 
+        #main {
+            margin-right: 0;
+        }    
+           
+    }
+    
+    @media (max-width: 600px) {
+        #menubar {
+            width: auto;
+            float: none;
+        }
+        #main {
+            margin: 0;
+        }    
     }
     </style>
-    
     </head>
     <body>
     
@@ -139,12 +155,7 @@
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
       </div>
     </div>
-    
     <script>
-    function noStyles() {
-        document.styleSheets[1].disabled = true;
-    }
-    
     function reStyle(n) {
         noStyles()
         document.styleSheets[n].disabled = false;
@@ -157,7 +168,6 @@
         stylediv = document.getElementById("stylediv")
         stylediv.parentNode.removeChild(stylediv);
     }
-    
     function showStyle(n) {
     var div, text, blackdiv;
     blackdiv = document.createElement("DIV");
@@ -175,7 +185,5 @@
     }
     reStyle(0);
     </script>
-    
-    
-    
-    </body></html>
+    </body>
+</html>
